@@ -1,7 +1,6 @@
 
 <h1 id="fenix-technology">Fenix technology</h1>
-[![nuevo-logo-f-nix.png](https://i.postimg.cc/9QqrpxCR/nuevo-logo-f-nix.png)](https://postimg.cc/bZpyY9Gp)
-<p><img src="https://document-export.canva.com/Zmcrg/DAFiUyZmcrg/1/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20230524%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230524T163739Z&amp;X-Amz-Expires=27347&amp;X-Amz-Signature=23a0d13e7a7e724988a0f669014cf16e0fc174cf2fe077a674248d57b7a8d9b4&amp;X-Amz-SignedHeaders=host&amp;response-expires=Thu%2C%2025%20May%202023%2000%3A13%3A26%20GMT" alt="">)</p>
+[![nuevo-logo-f-nix.png](https://i.postimg.cc/rpxbG6Gt/nuevo-logo-f-nix.png)](https://postimg.cc/nsV0ZPPH)
 <h2 id="objetivos">OBJETIVOS:</h2>
 <h3 id="general"><a href="https://github.com/CRISTIAN1000160022/NEWS-SENA#general"></a>General:</h3>
 <p>Implementar un sistema de control de inventario Efectivo que permite a la empresa realizar un registro bienes adecuados eficientes Hacer pedidos correctamente y asegurarse Estos niveles de inventario son apropiados Para satisfacer y evitar la demanda del cliente Pérdida de ventas y costos innecesarios.</p>
