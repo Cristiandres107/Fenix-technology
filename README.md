@@ -1,6 +1,6 @@
 
 <h1 id="fenix-technology">Fenix technology</h1>
-[![nuevo-logo-f-nix.png](https://i.postimg.cc/rpxbG6Gt/nuevo-logo-f-nix.png)](https://postimg.cc/nsV0ZPPH)
+<img src="[![nuevo-logo-f-nix.png](https://i.postimg.cc/rpxbG6Gt/nuevo-logo-f-nix.png)](https://postimg.cc/nsV0ZPPH)" >
 <h2 id="objetivos">OBJETIVOS:</h2>
 <h3 id="general"><a href="https://github.com/CRISTIAN1000160022/NEWS-SENA#general"></a>General:</h3>
 <p>Implementar un sistema de control de inventario Efectivo que permite a la empresa realizar un registro bienes adecuados eficientes Hacer pedidos correctamente y asegurarse Estos niveles de inventario son apropiados Para satisfacer y evitar la demanda del cliente Pérdida de ventas y costos innecesarios.</p>
