@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <br><title>Inventario de Zapatillas</title><br>
+  
+  <style>
+    body {
+    background-image: url('../img/fondo\%20z.png '); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  #inventory-table th,
+  #inventory-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+
+  #inventory-table th {
+    background-color: #030202;
+    text-align: left;
+  }
+
+  .filter-container {
+    margin-bottom: 20px;
+  }
+
+  .filter-container label {
+    font-weight: bold;
+  }
+
+  .filter-container select,
+  .filter-container input[type="text"] {
+    padding: 4px;
+  }
+
+  .add-form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .add-form label,
+  .add-form input[type="text"],
+  .add-form select,
+  .add-form textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .add-form button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .edit-btn {
+    margin-right: 4px;
+  }
+
+  .delete-btn {
+    background-color: #f44336;
+  }
+
+  .img-container {
+    width: 100px;
+  }
+
+  .img-container img {
+    width: 100%;
+  }
+  
+  .search-bar {
+      margin-bottom: 20px;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 4px;
+      width: 200px;
+    }
+
+    .search-bar button {
+      padding: 4px 8px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .activo {
+  background-color: green;
+  color: rgb(255, 255, 255);
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Inventario de Zapatillas</h1>
+  <div class="welcome-back">
+    <div class="message">
+        <h2>¿Deseas volver al inicio?</h2>
+        <button class="sign-in-btn" onclick="volverAlInicio()">Volver</button>
+        <button id="export-btn">Exportar a Excel</button> <!-- Botón de exportar -->
+    </div>
+</div>
+
+<div class="search-bar"> 
+  <input type="text" id="search-input" placeholder="Buscar por nombre">
+    <button id="search-btn">Buscar</button>
+  </div>
+
+
+   <div class="filter-container">
+    <label for="filter-talla">Filtrar por Talla:</label>
+    <select id="filter-talla">
+      <option value="">Todos</option>
+      <option value="35">35</option>
+      <option value="36">36</option>
+      <option value="37">37</option>
+      <option value="38">38</option>
+      <option value="39">39</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+    </select>
+
+    <label for="filter-nombre">Filtrar por Nombre:</label>
+    <input type="text" id="filter-nombre">
+
+    <label for="filter-color">Filtrar por color:</label>
+    <select id="filter-color">
+      <option value="">Todos</option>
+      <option value="Blanco">Blanco</option>
+      <option value="Blanco con negro">Blanco con negro</option>
+      <option value="cafe">cafe</option>
+      <option value="Negro">Negro</option>
+    </select>
+
+    <label for="filter-genero">Filtrar por Género:</label>
+    <select id="filter-genero">
+      <option value="Todos">Todos</option>
+      <option value="Hombre">Hombre</option>
+      <option value="Mujer">Mujer</option>
+    </select>
+
+    <button id="filter-btn">Filtrar</button>
+
+  </div>
+
+  <table id="inventory-table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Talla</th>
+        <th>Color</th>
+        <th>Género</th>
+        <th>Precio</th>
+        <th>Disponibilidad</th>
+        <th>Activo</th>
+        <th>Deshabilitar</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+        <td class="img-container"><img src="../img/nike/Nike M2K Tekno Cool White.jpg" alt="Zapatilla 1"></td>
+        <td>Nike M2K Tekno Cool White</td>
+        <td>40</td>
+        <td>Blanco</td>
+        <td>Mujer</td>
+        <td>$349.990</td>
+        <td>50 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <tr>
+           <td class="img-container"><img src="../img/nike/nike twist.jpg" alt="Zapatilla 2"></td>
+        <td>nike twist</td>
+        <td>39</td>
+        <td>Blanco con negro</td>
+        <td>Hombre</td>
+        <td>$179.900</td>
+        <td> Agotado</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+
+         <tr>
+        <td class="img-container"><img src="../img/nike/nike Wmns Dunk Low Disrupt.jpg" alt="Zapatilla 1"></td>
+        <td>nike Wmns Dunk Low Disrupt</td>
+        <td>42</td>
+        <td>blanco</td>
+        <td>Hombre</td>
+        <td>$459.950</td>
+        <td>60 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+       <tr>
+        <td class="img-container"><img src="../img/nike/The Nike Dunk Low.jpg" alt="Zapatilla 2"></td>
+        <td>The Nike Dunk Low</td>
+        <td>39</td>
+        <td>Blanco con negro </td>
+        <td>Mujer</td>
+        <td>$150.000</td>
+        <td>12 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="img-container"><img src="../img/adidas/Adidas Forum Low White Sneakers.jpg"alt="Zapatilla 1"></td>
+        <td>Adidas Forum Low White Sneakers</td>
+        <td>38</td>
+        <td>cafe</td>
+        <td>Hombre</td>
+        <td>$349.990</td>
+        <td>5 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <tr>
+           <td class="img-container"><img src="../img/adidas/BOTAS FORUM MID.jpg" alt="Zapatilla 2"></td>
+        <td>BOTAS FORUM MID</td>
+        <td>40</td>
+        <td>Negro</td>
+        <td>Mujer</td>
+        <td>$199.900</td>
+        <td>77 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+
+         <tr>
+        <td class="img-container"><img src="../img/adidas/adidas Forum Bold Shoes.jpg"alt="Zapatilla 1"></td>
+        <td>adidas Forum Bold Shoes</td>
+        <td>39</td>
+        <td>blanco</td>
+        <td>Mujer</td>
+        <td>$300.950</td>
+        <td>100 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+       <tr>
+        <td class="img-container"><img src="../img/adidas/adidas Forum Exhibit Low.jpg" alt="Zapatilla 2"></td>
+        <td>adidas Forum Exhibit Low </td>
+        <td>39</td>
+        <td>Blanco con rosado </td>
+        <td>Mujer</td>
+        <td>$180.000</td>
+        <td>55 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="img-container"><img src="../img/new balance/new balance 530,.jpg" alt="Zapatilla 1"></td>
+      <td>new balance 530,</td>
+      <td>38</td>
+      <td>gris con blanco</td>
+      <td>Mujer</td>
+      <td>$400.000</td>
+      <td>30 pares</td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+      <tr>
+         <td class="img-container"><img src="../img/new balance/New Balance Summer Sneaker.jpg" alt="Zapatilla 2"></td>
+      <td>New Balance Summer Sneaker</td>
+      <td>41</td>
+      <td>blanco con gris </td>
+      <td>Hombre</td>
+      <td>$300.000</td>
+      <td>25 pares</td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+       <tr>
+      <td class="img-container"><img src="../img/new balance/New Balance x Aimé Leon Dore 550.jpg" alt="Zapatilla 1"></td>
+      <td>New Balance x Aimé Leon Dore 550</td>
+      <td>39</td>
+      <td>cafe</td>
+      <td>unices</td>
+      <td>$600.350</td>
+      <td>66 pares</td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+        <button class="edit-btn">Editar</button>
+        <button class="delete-btn">Deshabilitar</button>
+      </td>
+    </tr>
+
+      <td class="img-container"><img src="../img/fila/Fila Women’s Ray Tracer Review.jpg"alt="Zapatilla 1"></td>
+        <td>Fila Women’s Ray Tracer Review</td>
+        <td>36</td>
+        <td>negros con blancos con detalles rojos </td>
+        <td>Hombre</td>
+        <td>$349.990</td>
+        <td>21 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <tr>
+           <td class="img-container"><img src="../img/fila/Tênis Fila Recovery Preto Fila Preto.jpg" alt="Zapatilla 2"></td>
+        <td>Tênis Fila Recovery Preto Fila Preto</td>
+        <td>41</td>
+        <td>gris con blanco</td>
+        <td>Hombre</td>
+        <td>$199.900</td>
+        <td>44 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+
+         <tr>
+        <td class="img-container"><img src="../img/fila/White Fila Disruptors.jpg"alt="Zapatilla 1"></td>
+        <td>White Fila Disruptors</td>
+        <td>40</td>
+        <td>blanco</td>
+        <td>Mujer</td>
+        <td>$300.950</td>
+        <td>11 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="img-container"><img src="../img/jordan/Air Jordan 1 Retro High OG Black White.jpg"alt="Zapatilla 1"></td>
+      <td>Air Jordan 1 Retro High OG Black White</td>
+      <td>41</td>
+      <td>blanco con negro </td>
+      <td>Hombre</td>
+      <td>$500.000</td>
+      <td>Agotado</td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+      <tr>
+         <td class="img-container"><img src="../img/jordan/Nike JORDAN 1 Air jordan.jpg" alt="Zapatilla 2"></td>
+      <td>Nike JORDAN 1 Air jordan</td>
+      <td>35</td>
+      <td>blanco con gris</td>
+      <td>Mujer</td>
+      <td>$400.000</td>
+      <td>Agotado</td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+
+       <tr>
+      <td class="img-container"><img src="../img/jordan/Nike JORDAN 1 Air.jpg"alt="Zapatilla 1"></td>
+      <td>Nike JORDAN 1 Air</td>
+      <td>40</td>
+      <td>amarillo con morado en bota</td>
+      <td>Hombre</td>
+      <td>$300.950</td>
+      <td>Agotado </td>
+      <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+      <td>
+        <button class="edit-btn">Editar</button>
+        <button class="delete-btn">Deshabilitar</button>
+      </td>
+    </tr>
+
+        <tr>
+          <td class="img-container"><img src="../img/puma/PUMA Slipstream Sneakers JR, White.jpg" alt="Zapatilla 1"></td>
+        <td>PUMA Slipstream Sneakers JR, White</td>
+        <td>41</td>
+        <td> blanco</td>
+        <td>hombre</td>
+        <td>$245.456</td>
+        <td>80 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <tr>
+           <td class="img-container"><img src="../img/puma/Drawing inspiration from the high-top.jpg" alt="Zapatilla 2"></td>
+        <td>Drawing inspiration from the high-top</td>
+        <td>39</td>
+        <td>negro con lineas blancas  </td>
+        <td>mujer</td>
+        <td>$500.460</td>
+        <td>1 par  </td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+
+         <tr>
+        <td class="img-container"><img src="../img/puma/Estilo Primavera Transpirable Malla Deportes Ocio Running Forrest.jpg" alt="Zapatilla 1"></td>
+        <td>Estilo Primavera Transpirable Malla Deportes Ocio Running Forrest</td>
+        <td>37</td>
+        <td>blanco con gris y azul </td>
+        <td>unices</td>
+        <td>$358.350</td>
+        <td>Agotado </td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="img-container"><img src="../img/bmw/Bmw S1000Rr Ttt-Va Bs Running.jpg"alt="Zapatilla 1"></td>
+        <td>Bmw S1000Rr Ttt-Va Bs Running</td>
+        <td>37</td>
+        <td>rojo con negro </td>
+        <td>Hombre</td>
+        <td>$500.000</td>
+        <td>100 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <tr>
+           <td class="img-container"><img src="../img/bmw/Step up your style with Max Soul.jpg" alt="Zapatilla 2"></td>
+        <td>Step up your style with Max Soul</td>
+        <td>35</td>
+        <td>gris con negro</td>
+        <td>Mujer</td>
+        <td>$400.000</td>
+        <td>78 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+
+         <tr>
+        <td class="img-container"><img src="../img/bmw/Tenis bmw mms low racer puma.jpg"alt="Zapatilla 1"></td>
+        <td>Tenis bmw mms low racer puma</td>
+        <td>36</td>
+        <td>negro con azul y morado </td>
+        <td>Hombre</td>
+        <td>$300.950</td>
+        <td>55 pares</td>
+        <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+        <td>
+          <button class="edit-btn">Editar</button>
+          <button class="delete-btn">Deshabilitar</button>
+        </td>
+        
+          <tr>
+            <td class="img-container"><img src="../img/louis vuitton/Come acquistare le Louis Vuitton X Nike Air Force 1.jpg"alt="Zapatilla 1"></td>
+          <td>Come acquistare le Louis Vuitton X Nike Air Force 1</td>
+          <td>35</td>
+          <td>cafes con blancos</td>
+          <td>Hombre</td>
+          <td>$500.000</td>
+          <td>86 pares</td>
+          <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+          <td>
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deshabilitar</button>
+            </td>
+          </tr>
+          <tr>
+             <td class="img-container"><img src="../img/louis vuitton/Louis Vuitton Louis Vuitton LV TRAINER SNEAKER.jpg" alt="Zapatilla 2"></td>
+          <td>Louis Vuitton Louis Vuitton LV TRAINER SNEAKER</td>
+          <td>35</td>
+          <td>azul con blanco</td>
+            <td>Hombre</td>
+            <td>$600.000</td>
+            <td>77 pares</td>
+            <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+            <td>
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deshabilitar</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="img-container"><img src="../img/reebook/Reebok Royal Complete 3.0.jpg"alt="Zapatilla 1"></td>
+          <td>Reebok Royal Complete 3.0</td>
+          <td>37</td>
+          <td>negro con blanco</td>
+          <td>unisex</td>
+          <td>$100.000</td>
+          <td>Agotado</td>
+          <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+          <td>
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deshabilitar</button>
+            </td>
+          </tr>
+          <tr>
+             <td class="img-container"><img src="../img/reebook/Tenis Training Reebok Flexagon Energy 4 - Azul.jpg" alt="Zapatilla 2"></td>
+          <td>Louis Vuitton LV TRAINER SNEAKER</td>
+          <td>37</td>
+          <td>azul</td>
+          <td>uniex</td>
+          <td>$350.000</td>
+          <td>34 pares</td>
+          <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+          <td>
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deshabilitar</button>
+            </td>
+          </tr>
+  
+           <tr>
+          <td class="img-container"><img src="../img/reebook/Zapatillas 'Reebok Royal Prime.jpg"alt="Zapatilla 1"></td>
+          <td>Zapatillas 'Reebok Royal Prime</td>
+          <td>40</td>
+          <td>blanco con negro</td>
+          <td>uniex</td>
+          <td>$300.100</td>
+          <td>54 pares</td>
+          <td><button class="estado-btn" onclick="cambiarEstado(this)">Inactivo</button></td>
+          <td>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Deshabilitar</button>
+          </td>
+        </tr>
+        <!-- Filas de zapatillas dinámicas -->
+      </tbody>
+    </table>
+  </div>
+  <script src="exportExcel.js"></script>
+  <script>
+    // Obtener el botón por su id
+    var estadoBtn = document.getElementById('estado-btn');
+  
+    // Variable para almacenar el estado actual
+    var estadoActivo = false;
+  
+    function cambiarEstado(button) {
+      if (button.textContent === "Inactivo") {
+        button.textContent = "Activo";
+        button.classList.add("activo");
+      } else {
+        button.textContent = "Inactivo";
+        button.classList.remove("activo");
+      }
+    }
+
+            function volverAlInicio() {
+            window.location.href = "indexjefe.html";
+        }
+
+// Función de búsqueda
+document.getElementById('search-btn').addEventListener('click', function() {
+  var searchValue = document.getElementById('search-input').value.toUpperCase();
+  var table = document.getElementsByTagName('table')[0];
+  var rows = table.getElementsByTagName('tr');
+
+  for (var i = 0; i < rows.length; i++) {
+    var nombre = rows[i].getElementsByTagName('td')[1]; // Corregir el índice a [1]
+    if (nombre) {
+      var txtNombre = nombre.textContent || nombre.innerText;
+      if (txtNombre.toUpperCase().indexOf(searchValue) > -1) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+});
+
+
+    // Filtrar zapatillas
+    document.getElementById('filter-btn').addEventListener('click', function() {
+      var filterTalla = document.getElementById('filter-talla').value.toUpperCase();
+      var filterNombre = document.getElementById('filter-nombre').value.toUpperCase();
+      var filterColor = document.getElementById('filter-color').value.toUpperCase();
+      var filterGenero = document.getElementById('filter-genero').value.toUpperCase();
+
+      var table = document.getElementsByTagName('table')[0];
+      var rows = table.getElementsByTagName('tr');
+
+      for (var i = 0; i < rows.length; i++) {
+        var nombre = rows[i].getElementsByTagName('td')[0];
+        var color = rows[i].getElementsByTagName('td')[1];
+        var talla = rows[i].getElementsByTagName('td')[2];
+        var genero = rows[i].getElementsByTagName('td')[3];
+
+        if (nombre || color || talla || genero) {
+          var txtNombre = nombre.textContent || nombre.innerText;
+          var txtColor = color.textContent || color.innerText;
+          var txtTalla = talla.textContent || talla.innerText;
+          var txtGenero = genero.textContent || genero.innerText;
+
+          if (
+            txtNombre.toUpperCase().indexOf(filterNombre) > -1 &&
+            txtColor.toUpperCase().indexOf(filterColor) > -1 &&
+            txtTalla.toUpperCase().indexOf(filterTalla) > -1 &&
+            (filterGenero === '' || txtGenero.toUpperCase().indexOf(filterGenero) > -1)
+          ) {
+            rows[i].style.display = '';
+          } else {
+            rows[i].style.display = 'none';
+          }
+        }
+      }
+    });
+
+    // Editar zapatilla
+    var editButtons = document.getElementsByClassName('edit-btn');
+    for (var i = 0; i < editButtons.length; i++) {
+      editButtons[i].addEventListener('click', function() {
+        var row = this.parentNode.parentNode;
+        var nombre = row.getElementsByTagName('td')[0];
+        var color = row.getElementsByTagName('td')[1];
+        var talla = row.getElementsByTagName('td')[2];
+        var genero = row.getElementsByTagName('td')[3];
+
+        var newNombre = prompt('Ingrese el nuevo nombre:', nombre.innerText);
+        var newColor = prompt('Ingrese el nuevo color:', color.innerText);
+        var newTalla = prompt('Ingrese la nueva talla:', talla.innerText);
+        var newGenero = prompt('Ingrese el nuevo género:', genero.innerText);
+
+        nombre.innerText = newNombre;
+        color.innerText = newColor;
+        talla.innerText = newTalla;
+        genero.innerText = newGenero;
+      });
+    }
+
+    // Eliminar zapatilla
+    var deleteButtons = document.getElementsByClassName('delete-btn');
+    for (var i = 0; i < deleteButtons.length; i++) {
+      deleteButtons[i].addEventListener('click', function() {
+        var row = this.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      });
+    }
+
+     // Exportar a Excel
+     document.getElementById('export-btn').addEventListener('click', function() {
+      var table = document.getElementById('inventory-table');
+      var html = table.outerHTML;
+      var url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+      var downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'inventory.xls';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    });
+
+      // Obtener referencias a los elementos HTML de los filtros
+  var filterTalla = document.getElementById('filter-talla');
+  var filterNombre = document.getElementById('filter-nombre');
+  var filterColor = document.getElementById('filter-color');
+  var filterGenero = document.getElementById('filter-genero');
+  var inventoryTable = document.getElementById('inventory-table');
+
+  // Escuchar el evento de cambio en los filtros
+  filterTalla.addEventListener('change', filterInventory);
+  filterNombre.addEventListener('keyup', filterInventory);
+  filterColor.addEventListener('change', filterInventory);
+  filterGenero.addEventListener('change', filterInventory);
+
+  function filterInventory() {
+    var selectedTalla = filterTalla.value;
+    var selectedNombre = filterNombre.value.toLowerCase();
+    var selectedColor = filterColor.value;
+    var selectedGenero = filterGenero.value.toLowerCase();
+
+    // Iterar sobre las filas de la tabla de inventario
+    for (var i = 1; i < inventoryTable.rows.length; i++) {
+      var row = inventoryTable.rows[i];
+      var talla = row.cells[2].textContent;
+      var nombre = row.cells[1].textContent.toLowerCase();
+      var color = row.cells[3].textContent.toLowerCase();
+      var genero = row.cells[4].textContent.toLowerCase();
+
+      // Aplicar el filtrado ocultando o mostrando las filas según los criterios seleccionados
+      row.style.display =
+        (selectedTalla === '' || talla === selectedTalla) &&
+        (selectedNombre === '' || nombre.includes(selectedNombre)) &&
+        (selectedColor === '' || color === selectedColor) &&
+        (selectedGenero === 'todos' || genero === selectedGenero)
+          ? ''
+          : 'none';
+    }
+  }
+
+  </script>
+</body>
+</html>
+
+
+
+
+
