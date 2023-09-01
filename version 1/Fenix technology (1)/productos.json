@@ -1,0 +1,104 @@
+[
+    {
+        "id": "abrigo-01",
+        "titulo": "Adidas",
+        "imagen": "/img/caballeros/adidas/Adidas Forum Low White Sneakers.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    }, 
+    
+    {
+        "id": "abrigo-01",
+        "titulo": "bmw",
+        "imagen": "/img/caballeros/bmw/Zapatillas bmw max soul zapatillas 2 Max Soul Shoes.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    }, 
+    {
+        "id": "abrigo-01",
+        "titulo": "fila",
+        "imagen": "/img/caballeros/fila/filaa hombre.jpeg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "jordan",
+        "imagen": "/img/caballeros/jordan/Nike JORDAN 1 Air jordan.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "lacoste",
+        "imagen": "/img/caballeros/lacoste/lacoste hombre.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "louis vuitton",
+        "imagen": "/img/caballeros/louis vuitton/Come acquistare le Louis Vuitton X Nike Air Force 1.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "new balance",
+        "imagen": "/img/caballeros/new balance/NEW BALANCE SNEAKERS - 7.5 US W.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "nike",
+        "imagen": "/img/caballeros/nike/Get Up Close With The Nike Dunk Low.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "abrigo-01",
+        "titulo": "puma",
+        "imagen": "/img/caballeros/puma/Drawing inspiration from the high-top.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+
+    {
+        "id": "abrigo-01",
+        "titulo": "rebook",
+        "imagen": "/img/caballeros/rebook/Reebok Royal Complete 3.0.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    }
+]
