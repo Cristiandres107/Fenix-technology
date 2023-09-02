@@ -1,0 +1,407 @@
+[
+    {
+        "id": "adidas caballero 1",
+        "titulo": "Adidas caballero",
+        "imagen": "/img/caballeros/adidas/Adidas Forum Low White Sneakers.jpg",
+        "categoria": {
+            "nombre": "adidas caballero",
+            "id": "adidas caballero"
+        },
+        "precio": 100000
+    }, 
+    {
+        "id": "adidas dama 2",
+        "titulo": "adidas dama",
+        "imagen": "img/damas/adidas/adidas Forum Bold Shoes.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 490000
+    }, 
+    {
+        "id": "adidas niño 1",
+        "titulo": "adidas niño",
+        "imagen": "img/niños/adidas/adidas Originals white and navy Falcon sneakers.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "adidas niña 1",
+        "titulo": "adidas niña",
+        "imagen": "img/niñas/adidas/Adidas Falcon Neon pack sneakers..jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 50000
+    },
+
+
+
+
+
+        {
+            "id": "bmw caballero 1",
+            "titulo": "bmw caballero",
+            "imagen": "/img/caballeros/bmw/bmw puma mirage.jpg",
+            "categoria": {
+               
+            },
+            "precio": 58000
+        },
+        {
+            "id": "bmw dama 1",
+            "titulo": "bmw dama ",
+            "imagen": "img/damas/bmw/BMW-M-Motorsport-TRC-Lyft-Women's-Motorsport-Shoes.avif",
+            "categoria": {
+              
+            },
+            "precio": 785000
+        },
+        {
+            "id": "bmw niño 1",
+            "titulo": "bmw niño",
+            "imagen": "/img/niños/bmw/Bmw S1000Rr Ttt-Va Bs Running.jpg",
+            "categoria": {
+              
+            },
+            "precio": 700000
+        },
+        {
+            "id": "bmw niña1 ",
+            "titulo": "bmw niña ",
+            "imagen": "/img/niñas/bmw/Step up your style with Max Soul.jpg",
+            "categoria": {
+               
+            },
+            "precio": 4000000
+        }, 
+
+        
+        
+
+
+    {
+        "id": "fila hombre",
+        "titulo": "Fila hombre",
+        "imagen": "/img/caballeros/fila/fija hombre.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    }, 
+    {
+        "id": "fila damas",
+        "titulo": "Fila dama",
+        "imagen": "/img/damas/fila/fila mujer.jpeg",
+        "categoria": {
+            "nombre": "fila",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    }, 
+    {
+        "id": "fila niño",
+        "titulo": "Fila niño",
+        "imagen": "/img/niños/fila/fila niño.jpeg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+    {
+        "id": "fila niña",
+        "titulo": "fila",
+        "imagen": "/img/niñas/fila/fila niña.jpeg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 58000
+    },
+
+
+
+
+
+    {
+        "id": "jordan caballero 1",
+        "titulo": "jordan caballero air jordan 1 mid",
+        "imagen": "img/caballeros/jordan/Air Jordan 1 Mid (Lakers).jpg",
+        "categoria": {
+    
+        },
+        "precio": 400000
+    }, 
+    {
+        "id": "jordan dama 1",
+        "titulo": "jordan dama multi-color",
+        "imagen": "img/damas/jordan/Jordan 1 Mid “Multi-Color” DN3738.jpg",
+       
+        "precio": 900000
+    }, 
+    {
+        "id": "jordan niña 1",
+        "titulo": "jordan niña moradas",
+        "imagen": "img/niñas/jordan/¡Jordanias moradas!.jpg",
+        "categoria": {
+          
+        },
+        "precio": 58000
+    },
+    {
+        "id": "jordan niño 1",
+        "titulo": "jordan niño 1 union",
+        "imagen": "img/niños/jordan/Jordan 1 Union.jpg",
+        "categoria": {
+          
+        },
+        "precio": 50000
+    },
+
+
+
+
+    {
+        "id": "lacoste-01",
+        "titulo": "lacoste caballero    black blue cocokdr",
+        "imagen": "img/caballeros/lacoste/lacoste hombre.jpg",
+        "categoria": {
+           
+        },
+        "precio": 78000000
+    },
+    {
+        "id": "lacoste-02",
+        "titulo": "lacoste dama",
+        "imagen": "img/damas/lacoste/Lacoste Carnaby Pro Tri 123 1.jpg",
+        "categoria": {
+           
+        },
+        "precio": 53000000
+    }, 
+    {
+        "id": "lacoste-03",
+        "titulo": "lacoste niña pink roush",
+        "imagen": "img/niñas/lacoste/lacosteni.jpeg",
+        "categoria": {
+          
+        },
+        "precio": 2500000
+    },
+    {
+        "id": "lacoste niño 4 ",
+        "titulo": "lacoste niño",
+        "imagen": "img/niños/lacoste/lacoste niño.jpeg",
+        "categoria": {
+          
+        },
+        "precio": 2890000
+    },
+
+
+
+
+    {
+        "id": "louis vuitton caballero 1",
+        "titulo": "louis vuitton caballero",
+        "imagen": "img/caballeros/louis vuitton/caballero lous.jpeg",
+        "categoria": {
+    
+        },
+        "precio": 400000
+    }, 
+    {
+        "id": "louis vuitton  dama1",
+        "titulo": "louis vuitton dama",
+        "imagen": "img/damas/louis vuitton/louis dama.jpeg",
+       
+        "precio": 900000
+    }, 
+    {
+        "id": "louis vuitton niño 1",
+        "titulo": "louis vuitton niño ",
+        "imagen": "img/niñas/louis vuitton/louis ni.jpeg",
+        "categoria": {
+          
+        },
+        "precio": 58000
+    },
+    {
+        "id": "louis vuitton caballero niña 1",
+        "titulo": "louis vuitton niña",
+        "imagen": "img/niños/louis vuitton/louis niño.jpeg",
+        "categoria": {
+          
+        },
+        "precio": 50000
+    },
+
+
+
+
+    {
+        "id": "new balance",
+        "titulo": "new balance caballero sneakers",
+        "imagen": "img/caballeros/new balance/NEW BALANCE SNEAKERS - 7.5 US W.jpg",
+        "categoria": {
+    
+        },
+        "precio": 250000
+    }, 
+    {
+        "id": "new balance",
+        "titulo": "new balance  530 dama",
+        "imagen": "img/damas/new balance/new balance 530,.jpg",
+       
+        "precio": 100000
+    }, 
+    {
+        "id": "new balance",
+        "titulo": "new balance  summer sneakers niña ",
+        "imagen": "img/niñas/new balance/New Balance Summer Sneaker.jpg",
+        "categoria": {
+          
+        },
+        "precio": 700000
+    },
+    {
+        "id": "new balance",
+        "titulo": "new balance x aime niño ",
+        "imagen": "img/niños/new balance/New Balance x Aimé Leon Dore 550.jpg",
+        "categoria": {
+          
+        },
+        "precio": 8000000
+    },
+
+
+
+
+
+
+{
+    "id": "nike-01",
+    "titulo": "nike blue short fhonk",
+    "imagen": "img/caballeros/nike/Get Up Close With The Nike Dunk Low.jpg",
+    "categoria": {
+       
+    },
+    "precio": 5690000
+},
+{
+    "id": "nike-02",
+    "titulo": "nike white porch",
+    "imagen": "img/damas/nike/Nike Dunk Low Two Tone Grey - 46.jpg",
+    "categoria": {
+       
+    },
+    "precio": 53000000
+}, 
+{
+    "id": "nike-03",
+    "titulo": "nike pilk walpwer",
+    "imagen": "img/niñas/nike/Nike M2K Tekno Cool White.jpg",
+    "categoria": {
+      
+    },
+    "precio": 8000000
+},
+{
+    "id": "nike-04",
+    "titulo": "nike black ponter",
+    "imagen": "img/niños/nike/New Balance 530 'White Natural Indigo' MR530SG.jpg",
+    "categoria": {
+      
+    },
+    "precio": 3000000
+},
+
+
+
+
+
+
+{
+    "id": "puma caballero 1",
+    "titulo": "puma caballero",
+    "imagen": "img/caballeros/puma/Drawing inspiration from the high-top.jpg",
+    "categoria": {
+       
+    },
+    "precio": 5690000
+},
+{
+    "id": "puma dama 1",
+    "titulo": "puma dama",
+    "imagen": "img/damas/puma/Puma Cruise Rider Silk Road Sneakers.jpg",
+    "categoria": {
+       
+    },
+    "precio": 53000000
+}, 
+{
+    "id": "puma niña 1",
+    "titulo": "puma niña ",
+    "imagen": "img/niñas/puma/Estilo Primavera Transpirable Malla Deportes Ocio Running Forrest.jpg",
+    "categoria": {
+      
+    },
+    "precio": 8000000
+},
+{
+    "id": "puma niño 1",
+    "titulo": "puma niño ",
+    "imagen": "img/niños/puma/puma niño.jpeg",
+    "categoria": {
+      
+    },
+    "precio": 3000000
+},
+
+
+
+
+
+{
+    "id": "rebook",
+    "titulo": "rebook caballero",
+    "imagen": "img/caballeros/rebook/rebook hombre.jpeg",
+    "categoria": {
+
+    },
+    "precio":57000
+}, 
+
+{
+    "id": "rebook",
+    "titulo": "rebook dama",
+    "imagen": "img/damas/rebook/rebook mujer.jpeg",
+   
+    "precio": 100000
+}, 
+{
+    "id": "rebook",
+    "titulo": "rebook niña ",
+    "imagen": "img/niñas/rebook/niña rebook.jpeg",
+    "categoria": {
+      
+    },
+    "precio": 700000
+},
+{
+    "id": "rebook",
+    "titulo": "nrebook  niño",
+    "imagen": "img/niños/rebook/niño rebook.jpeg",
+    "categoria": {
+      
+    },
+    "precio": 100000
+}
+]

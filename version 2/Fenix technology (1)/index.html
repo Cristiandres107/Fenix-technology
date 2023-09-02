@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportLine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header-mobile">
+            <h1 class="logo">SportLine</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <h1 class="logo">SportLine</h1>
+            </header>
+            <nav>
+                
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+                    </li>
+                    
+                    <li>
+                        <button id="damas" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Damas
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu1">
+                            <li><a href="#">ADIDAS </a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">FILA</a></li>
+                            <li><a href="#">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="caballeros" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Caballeros
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu2">
+                            <li><a href="#">ADIDAS </a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">FILA</a></li>
+                            <li><a href="#">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button id="niños" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Niños
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu3">
+                            <li><a href="#">ADIDAS </a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">FILA</a></li>
+                            <li><a href="#">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="niñas" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Niñas
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu4">
+                            <li><a href="#">ADIDAS </a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">FILA</a></li>
+                            <li><a href="#">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a class="boton-menu boton-carrito" href="carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+
+                   
+                    
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </main>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="main.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

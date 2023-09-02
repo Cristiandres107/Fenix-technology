@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos_form2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sportling</title>
+</head>
+
+<body>
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido a Sportling</h2>
+                <p>Si ya tienes una cuenta, por favor inicia sesión aquí</p>
+                <button class="sign-up-btn">Iniciar Sesión </button>
+            </div>
+        </div>
+        <form id="signup-form" class="formulario message">
+            <h2 class="create-account">Crear una cuenta para el jefe</h2>
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellido" placeholder="Apellido">
+            <select id="tipo-documento">
+                <option value="">Tipo de documento</option>
+                <option value="DNI">DNI</option>
+                <option value="C.C">C.C </option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+            <input type="text" id="documento" placeholder="Documento">
+            <input type="text" id="telefono" placeholder="Teléfono">
+            <input type="email" id="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+            <span id="email-error" class="error-message"></span>
+            <input type="text" id="edad" placeholder="Edad">
+            <input type="password" id="password" placeholder="Contraseña">
+            <input type="password" id="confirm-password" placeholder="Confirmar contraseña">
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+    <div class="container-form sign-in">
+        <form class="formulario">
+            <h2 class="create-account">Iniciar Sesión</h2>
+
+            <br><br><input type="email" placeholder="Email">
+            <input type="password" placeholder="Contraseña">
+            <div class="input-link">
+                <a href="../html/recuperarcontraseña.html" class="gradient-text">¿Has olvidado tu contraseña?</a>
+            </div>
+            <input type="button" value="Iniciar Sesión" onclick="redirectToInventory()"></br></br>
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <h2>¿Deseas volver al inicio?</h2>
+                <button class="sign-in-btn" onclick="volverAlInicio()">Volver</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script_form.js"></script>
+    <script>
+        function volverAlInicio() {
+            window.location.href = "index.html";
+        }
+
+        function redirectToInventory() {
+            window.location.href = "indexjefe.html";
+        }
+
+        // Get the form element
+        const form = document.getElementById('signup-form');
+
+        // Add event listener for form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the form field values
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const tipoDocumento = document.getElementById('tipo-documento').value;
+            const documento = document.getElementById('documento').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const edad = document.getElementById('edad').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Perform validation checks
+            if (nombre.trim() === '') {
+                alert('Por favor, ingresa tu nombre.');
+                return;
+            }
+
+            if (apellido.trim() === '') {
+                alert('Por favor, ingresa tu apellido.');
+                return;
+            }
+
+            if (tipoDocumento === '') {
+                alert('Por favor, selecciona un tipo de documento.');
+                return;
+            }
+
+            if (documento.trim() === '') {
+                alert('Por favor, ingresa tu documento.');
+                return;
+            }
+
+            if (telefono.trim() === '') {
+                alert('Por favor, ingresa tu teléfono.');
+                return;
+            }
+
+            // Validate that telefono and documento contain only numbers
+            const telefonoPattern = /^\d+$/;
+            const documentoPattern = /^\d+$/;
+
+            if (!telefono.match(telefonoPattern)) {
+                alert('Por favor, ingresa solo números en el campo de Teléfono.');
+                return;
+            }
+
+            if (!documento.match(documentoPattern)) {
+                alert('Por favor, ingresa solo números en el campo de Documento.');
+                return;
+            }
+
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+
+            if (emailInput.validity.valueMissing) {
+                alert('Por favor, ingresa tu email.');
+                return;
+            } else if (emailInput.validity.typeMismatch) {
+                alert('Ingresa un correo electrónico válido.');
+                return;
+            }
+
+            if (edad.trim() === '') {
+                alert('Por favor, ingresa tu edad.');
+                return;
+            }
+
+            // Perform other validation checks for remaining fields
+
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            // If all validation checks pass, you can proceed with form submission
+            // Here you can add code to send the form data to the server or perform any other desired action
+
+            // Clear the form fields
+            form.reset();
+        });
+
+    </script>
+</body>
+
+</html>
