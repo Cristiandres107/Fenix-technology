@@ -56,3 +56,39 @@ niñasButton.addEventListener('click', () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const botonesAcciones = document.querySelectorAll(".boton-accion");
+    const botonesEditar = document.querySelectorAll(".boton-editar");
+
+    botonesAcciones.forEach((boton) => {
+        boton.addEventListener("click", function () {
+            const producto = boton.closest(".producto");
+            const detalles = producto.querySelector(".producto-detalles");
+
+            if (boton.classList.contains("activo")) {
+                boton.textContent = "Activar";
+                boton.classList.remove("activo");
+                boton.classList.add("inactivo");
+                detalles.classList.add("desactivado");
+            } else if (boton.classList.contains("inactivo")) {
+                boton.textContent = "Desactivar";
+                boton.classList.remove("inactivo");
+                boton.classList.add("activo");
+                detalles.classList.remove("desactivado");
+            }
+        });
+    });
+
+    botonesEditar.forEach((boton) => {
+        boton.addEventListener("click", function () {
+            const producto = boton.closest(".producto");
+            const detalles = producto.querySelector(".producto-detalles");
+            const descripcion = detalles.querySelector("p");
+            const nuevaDescripcion = prompt("Ingrese la nueva descripción:");
+            
+            if (nuevaDescripcion !== null) {
+                descripcion.textContent = nuevaDescripcion;
+            }
+        });
+    });
+});

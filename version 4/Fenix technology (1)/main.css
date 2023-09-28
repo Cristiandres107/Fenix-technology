@@ -28,14 +28,15 @@ ul {
 a {
     text-decoration: none;
 }
-
+ 
+/*aca se puede configurar el grosor el tamaño en blanco*/
 .wrapper {
     display: grid;
     grid-template-columns: 1.5fr 7fr;
     background-color: var(--clr-main);
 }
 
-/*aca se peude configuar si queremos que se vea mas arriba o mas abajo el menu*/
+/*aca se puede configuar si queremos que se vea mas arriba o mas abajo el menu*/
 aside {
     padding: 2rem;
     padding-right: 0;
@@ -105,6 +106,7 @@ aside {
     box-shadow: 0 -1rem 0 var(--clr-white);
 }
 
+/*aqui es para que se pueda configurar la direccion de los dedos */
 .boton-menu > i.bi-hand-index-thumb-fill,
 .boton-menu > i.bi-hand-index-thumb {
     transform: rotateZ(90deg);
@@ -135,15 +137,18 @@ main {
     padding: 3rem;
 }
 
+
+/*aca se peude configurar el espacio entre el titulo y los productos */
 .titulo-principal {
     color: var(--clr-main);
-    margin-bottom: 56rem;
+    margin-bottom: 15rem;
 }
+
 
 .contenedor-productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 15rem;
 }
 
 .producto-imagen {
@@ -163,6 +168,8 @@ main {
     gap: .25rem;
 }
 
+
+/*aca es para acomodar caba boton en la pantalla*/
 .header-mobile {
     display: none;
 }
@@ -189,6 +196,7 @@ main {
     }
 }
 
+/*para acomodar como como queremosque se vea el menu escondido*/
 @media screen and (max-width: 600px) {
 
     .wrapper {
@@ -296,4 +304,42 @@ main {
 .submenu3 a:hover,
 .submenu4 a:hover {
     background-color: #9e9e9e;
+}
+
+
+/*botones para los botones */
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.boton-accion {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.boton-accion.activo {
+    background-color: #28a745;
+    color: white;
+}
+
+.boton-accion.inactivo {
+    background-color: #dc3545;
+    color: white;
+}
+
+.boton-editar {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
 }
