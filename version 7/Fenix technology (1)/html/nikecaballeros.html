@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportLine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header-mobile">
+            <h1 class="logo">SportLine</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <h1 class="logo">SportLine</h1>
+            </header>
+            <nav>
+                
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Productos</button>
+                    </li>
+                    
+                    <li>
+                        <button id="damas" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Damas
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu1">
+                            <li><a href="../html/adidasdamas.html">ADIDAS </a></li>
+                            <li><a href="../html/filadama.html">FILA</a></li>
+                            <li><a href="../html/jordandama.html">JORDAN</a></li>
+                            <li><a href="../html/nikedama.html">NIKE</a></li>
+                            <li><a href="../html/pumadama.html">PUMA</a></li>
+                            <li><a href="../html/rebookdama.html">REBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="caballeros" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Caballeros
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu2">
+                            <li><a href="../html/adidascaballeros.html">ADIDAS </a></li>
+                            <li><a href="../html/filacaballero.html">FILA</a></li>
+                            <li><a href="../html/jordancaballeros.html">JORDAN</a></li>
+                            <li><a href="../html/nikecaballeros.html">NIKE</a></li>
+                            <li><a href="../html/pumacaballeros.html">PUMA</a></li>
+                            <li><a href="../html/rebookcaballeros.html">REBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button id="niños" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Niños
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu3">
+                            <li><a href="../html/adidasniños.html">ADIDAS </a></li>
+                            <li><a href="../html/filaniño.html">FILA</a></li>
+                            <li><a href="../html/jordanniños.html">JORDAN</a></li>
+                            <li><a href="../html/nikeniños.html">NIKE</a></li>
+                            <li><a href="../html/pumaniños.html">PUMA</a></li>
+                            <li><a href="../html/rebookniños.html">REBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="volver" class="boton-menu boton-volver" href="indexinventario.html">
+                            <i class="bi bi-chevron-left"></i> Volver 
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main">
+            <h2 class="titulo-principal" id="titulo-principal">NIKE</h2>
+
+              <!--  codigo para la exportacion de las zapatillas -->
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+              <button id="export-button">Export to Excel</button>
+              <script>
+                  document.getElementById("export-button").addEventListener("click", function() {
+                      // Create a new workbook
+                      const wb = XLSX.utils.book_new();
+                      const wsName = "Products"; // Name of the worksheet
+              
+                      // Collect product data
+                      const products = [];
+                      const productContainers = document.querySelectorAll(".producto-container");
+                      
+                      productContainers.forEach(productContainer => {
+                          const img = productContainer.querySelector(".producto-contenido img").src;
+                          const name = productContainer.querySelector(".producto-detalles h3").textContent;
+                          const description = productContainer.querySelector(".producto-detalles p").textContent;
+                          const price = productContainer.querySelector(".producto-detalles .precio").textContent;
+                          
+                          products.push([img, name, description, price]);
+                      });
+              
+                      // Create worksheet
+                      const ws = XLSX.utils.aoa_to_sheet([["Image", "Name", "Description", "Price"], ...products]);
+                      XLSX.utils.book_append_sheet(wb, ws, wsName);
+              
+                      // Export the workbook to a file
+                      XLSX.writeFile(wb, "products.xlsx");
+                  });
+              </script>
+              <style>
+                  #export-button {
+                      background-color: #000000;
+                      color: #fff;
+                      border: none;
+                      padding: 10px 20px;
+                      cursor: pointer;
+                      border-radius: 4px;
+                      font-size: 16px;
+                  }
+              
+                  #export-button:hover {
+                      background-color: #42424285;
+                  }
+              </style>
+        
+            <!-- Producto 1 -->
+            <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="../img/caballeros/nike/Get Up Close With The Nike Dunk Low.jpg" alt="Producto 1" width="400rem">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>Get Up Close With The Nike Dunk Low</h3>
+                        <p>Diseñado con una base de cuero blanco, la parte superior está superpuesta con toques de azul pálido desde la puntera hasta el talón. Una correa de velcro bloquea el tobillo, mientras que un trébol estampado descansa justo en el centro de la icónica correa en forma de X en los laterales.</p>
+                        <span class="precio">$35.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+        
+            <!-- Producto 2 -->
+            <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="../img/caballeros/nike/Kids Nike Court Borough Mid 2 GS 'White Signal Blue.jpg" alt="Producto 1" width="400rem">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>Kids Nike Court Borough Mid 2 GS 'White Signal Blue</h3>
+                        <p>Empeine con cordones. Cierre de correa de velcro. Entresuela que absorbe los golpes. Punta redonda. Tira de la pestaña en la parte posterior para un fácil acceso de encendido y apagado. Marca en la parte superior, correa, lengüeta y talón. Parte superior de cuero y material textil. Forro y plantilla de material textil. Suela sintética.</p>
+                        <span class="precio">$56.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Producto 3 -->
+                       <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="../img/caballeros/nike/Nike Dunk Low Court Purple.jpg" alt="Producto 1" width="400rem">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>Nike Dunk Low Court Purple</h3>
+                        <p>Con el paso del tiempo, los skaters las adoptaron por su durabilidad y su contacto reactivo con la tabla. En 2002, se renovó el diseño para adaptarlo a este nuevo público y se incluyó una unidad Zoom Air en el talón y una lengüeta acolchada para ofrecer máxima comodidad.</p>
+                        <span class="precio">$35.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    <script src="../js/menu.js"></script>
+    </body>
+    </html>
+    </head>
