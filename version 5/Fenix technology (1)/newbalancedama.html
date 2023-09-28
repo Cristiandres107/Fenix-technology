@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportLine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header-mobile">
+            <h1 class="logo">SportLine</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <h1 class="logo">SportLine</h1>
+            </header>
+            <nav>
+                
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Productos</button>
+                    </li>
+                    
+                    <li>
+                        <button id="damas" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Damas
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu1">
+                            <li><a href="adidasdamas.html">ADIDAS </a></li>
+                            <li><a href="filadama.html">FILA</a></li>
+                            <li><a href="jordandama.html">JORDAN</a></li>
+                            <li><a href="newbalancedama.html">NEW BALNACE</a></li>
+                            <li><a href="newbalancedama.html">NIKE</a></li>
+                            <li><a href="pumadama.html">PUMA</a></li>
+                            <li><a href="rebookdama.html">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="caballeros" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Caballeros
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu2">
+                            <li><a href="adidascaballeros.html">ADIDAS </a></li>
+                            <li><a href="">BMW</a></li>
+                            <li><a href="filadama.html">FILA</a></li>
+                            <li><a href="jordandama.html">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button id="niños" class="boton-menu boton-categoria">
+                            <i class="bi bi-hand-index-thumb"></i> Niños
+                            <i class="bi bi-chevron-down"></i> <!-- Agrega un icono de flecha hacia abajo -->
+                        </button>
+                        <ul class="submenu3">
+                            <li><a href="adidasniños.html">ADIDAS </a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="filadama.html">FILA</a></li>
+                            <li><a href="jordandama.html">JORDAN</a></li>
+                            <li><a href="#">LACOSTE</a></li>
+                            <li><a href="#">LOUS VUITTON</a></li>
+                            <li><a href="#">NEW BALNACE</a></li>
+                            <li><a href="#">NIKE</a></li>
+                            <li><a href="#">PUMA</a></li>
+                            <li><a href="#">REEBOOK</a></li>
+                            <!-- Agrega más elementos si es necesario -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="volver" class="boton-menu boton-volver" href="indexinventario.html">
+                            <i class="bi bi-chevron-left"></i> Volver 
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main">
+            <h2 class="titulo-principal" id="titulo-principal">NEW BALANCE</h2>
+        
+            <!-- Producto 1 -->
+            <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="img/damas/new balance/New Balance 574 Sneakers.jpg" alt="Producto 1" width="400">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>New Balance 574 Sneakers</h3>
+                        <p>New Balance 574 Sneakers <br>
+                            <br>New Balance 574 Sneakers coloridas para tus autfits
+                            <br>35<br>
+                                37<br>
+                                40<br>
+                                47<br>
+                                precio fijo de tan solo 
+                        </p>
+                        <span class="precio">$190.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+        
+            <!-- Producto 2 -->
+            <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="img/damas/new balance/NEW BALANCE 550 EN CAFÉ.jpg" alt="Producto 1" width="400">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>NEW BALANCE 550 EN CAFÉ</h3>
+                        <p>NEW BALANCE 550 EN diferentes tonos de cafe
+                            <br>dispodiblres en talla 
+                            <br>34<br>
+                                35<br>
+                                37<br>
+                                42<br>
+                                precio fijo de tan solo  </p>
+                        <span class="precio">$190.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Producto 3 -->
+                       <div class="producto-container">
+                <div class="producto">
+                    <div class="producto-contenido">
+                        <img src="img/damas/new balance/new balance 530,.jpg" alt="Producto 1" width="400">
+                       
+                    </div>
+                    <div class="producto-detalles">
+                        <h3>new balance 530</h3>
+                        <p>new balance 530 para dama color gris super comodas para tus caminatas de dia a dia
+                            <br>dispodiblres en talla 
+                            <br>33<br>
+                                35<br>
+                                37<br>
+                                45<br>
+                                precio fijo de tan solo  </p>
+                        </p>
+                        <span class="precio">$190.000</span>
+                        <div class="acciones">
+                            <button class="boton-accion activo">Desactivar</button>
+                            <button class="boton-accion inactivo">Activar</button>
+                            <button class="boton-editar">Editar</button>
+                        </div>
+                    </div>
+            </div>
+    </div>
+        <script src="menu.js"></script>
+    </body>
+    </html>
+    </head>
