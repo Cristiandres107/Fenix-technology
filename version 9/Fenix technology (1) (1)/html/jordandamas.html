@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jordan Damas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/inventario.css">
+    <link rel="shortcut icon" href="/img/logo.png">
+    
+</head>
+<body>
+    <br>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active btn btn-dark" aria-current="page" href="inventariojefeprincipal.html">Volver atras</a>
+    </li>
+     <!-- Código para la exportación de las zapatillas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+<button id="export-button" class="btn btn-dark">Exportar a excel</button>
+
+<script>
+  document.getElementById("export-button").addEventListener("click", function() {
+    // Crear un nuevo libro de Excel
+    const wb = XLSX.utils.book_new();
+    const wsName = "Products"; // Nombre de la hoja de cálculo
+
+    // Recopilar datos de productos
+    const products = [];
+    const productContainers = document.querySelectorAll(".card-body");
+
+    productContainers.forEach(productContainer => {
+      const imgURL = productContainer.querySelector("img").src;
+      const name = productContainer.querySelector(".card-title").textContent;
+      const price = productContainer.querySelector("p").textContent;
+
+      products.push([imgURL, name, price]);
+    });
+
+    // Crear la hoja de cálculo
+    const header = ["Image URL", "Name", "Price"];
+    const data = [header, ...products];
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    XLSX.utils.book_append_sheet(wb, ws, wsName);
+
+    // Exportar el libro de Excel a un archivo
+    XLSX.writeFile(wb, "products.xlsx");
+  });
+</script>
+<!--  fin para el Código de la exportación de las zapatillas -->
+
+ <!-- Código para la barra de busqueda -->
+ <form class="d-flex" id="productSearchForm">
+  <input class="form-control me-2" type="text" placeholder="Buscar zapatilla">
+  <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
+
+<script>
+document.getElementById('productSearchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var searchTerm = document.querySelector('#productSearchForm input').value.toLowerCase();
+
+    var productLinks = {
+      "air jordan 1 mid “strawberries cream”": "/htmldamas/jordandama1.html",
+        "deporte tenis nike air jordan 11 concord con manguera altablanconegro para hombres y mujeres": "/htmldamas/jordandama2.html",
+        "jordan nike - tenis de baloncesto unisex, morado": "/htmldamas/jordandama4.html",
+        "jordan 1 mid se bright citrus bright citrusblanco cz0774 800 para mujerazul francésember mágico 8.5 us": "/htmldamas/jordandama3.html",
+        "zapatillas para dama jordan retro": "/htmldamas/jordandama6.html",
+        "nike jordan 1 mid arctic rosado pre-school ps": "/htmldamas/jordandama5.html"
+    };
+
+    var productLink = productLinks[searchTerm];
+
+    if (productLink) {
+        window.location.href = productLink;
+    } else {
+        alert('Zapatilla no encontrada');
+    }
+});
+</script>
+ <!-- fin de la barra de busqueda -->
+
+</ul>
+
+<br>
+ <!-- Botón para abrir el modal -->
+ <button id="showFormButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar Nueva Zapatilla</button>
+
+ <!-- Modal de inserción de zapatillas -->
+ <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="addProductModalLabel">Agregar Nueva Zapatilla</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <form id="newProductForm">
+                     <div class="mb-3">
+                         <label for="productName" class="form-label">Nombre de la Zapatilla</label>
+                         <input type="text" class="form-control" id="productName" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="productPrice" class="form-label">Precio</label>
+                         <input type="number" class="form-control" id="productPrice" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="productImage" class="form-label">Imagen de la Zapatilla</label>
+                         <input type="file" class="form-control" id="productImage" accept="image/*" required>
+                     </div>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                 <button type="button" class="btn btn-success" id="addProductButton">Agregar</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/Air Jordan 1 Mid “Strawberries  Cream”/arriba.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">air Jordan 1 Mid “Strawberries  Cream”</h5>
+          <p>$50.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama1.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/Deporte Tenis Nike Air Jordan 11 concord Con Manguera AltaBlancoNegro Para Hombres Y Mujeres/lado derecho.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">Deporte Tenis Nike Air Jordan 11 concord Con Manguera AltaBlancoNegro Para Hombres Y Mujeres</h5>
+          <p>$95.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama2.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/jordan Nike - Tenis de baloncesto unisex, morado/lado derecho.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">jordan Nike - Tenis de baloncesto unisex, morado</h5>
+          <p>$250.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama4.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/Jordan 1 Mid SE Bright Citrus Bright CitrusBlanco CZ0774 800 para mujerAzul francésEmber mágico 8.5 US/lado derecho.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">Jordan 1 Mid SE Bright Citrus Bright CitrusBlanco CZ0774 800 para mujerAzul francésEmber mágico 8.5 US</h5>
+          <p>$300.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama3.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div><div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/Zapatillas para Dama Jordan Retro/lafo izquierdo.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">Zapatillas para Dama Jordan Retro</h5>
+          <p>$95.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama6.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/damas/jordan/Nike Jordan 1 Mid Arctic Rosado Pre-School PS/alfrente.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">Nike Jordan 1 Mid Arctic Rosado Pre-School PS</h5>
+          <p>$300.000</p>
+          <p class="card-text"></p>
+          <a href="/htmldamas/jordandama5.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script src="/js/inventario.js" ></script>
+</body>
+</html>

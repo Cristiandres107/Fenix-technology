@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(..//img/fondo.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  .wrapper{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+  }
+  .wrapper h1{
+    font-size: 36px;
+    text-align: center;
+  }
+  .wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    
+    margin: 30px 0;
+  }
+  .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+  }
+  .input-box input::placeholder{
+    color: #fff;
+  }
+  .input-box i{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
+  
+  }
+  .wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+  }
+  .remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+  
+  }
+  .remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+  
+  }
+  .remember-forgot a:hover{
+    text-decoration: underline;
+  }
+  .wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+  }
+  .wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+  
+  }
+  .register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .register-link p a:hover{
+    text-decoration: underline;
+  }
+
+/* Estilos para el botón de inicio */
+.home-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  color: #fff; /* Color del texto */
+}
+
+.home-button {
+  background-color: #ffffff; /* Color de fondo del botón */
+  color: #000000; /* Color del texto del botón */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-button i {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos para el botón de "Volver Atrás" */
+.back-link {
+  position: absolute;
+  top: 50px; /* Ajusta la posición vertical según tu diseño */
+  left: 10px;
+  text-decoration: none;
+  color: #fff; /* Color del texto */
+}
+
+.back-button {
+  background-color: #ffffff; /* Color de fondo del botón */
+  color: #000000; /* Color del texto del botón */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button i {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+
+
+/*estilos para recuperar contraseña */
+
+.iiconos {
+    position: relative;
+    display: inline-block;
+}
+
+.ttexto-oculto {
+    position: absolute;
+    top: -100px; /* Ajusta la posición vertical según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 70px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bborder-icon:hover .texto-oculto {
+    opacity: 1;
+}
+
+.iiconos {
+    display: flex;
+    justify-content: center; /* Alinea los iconos horizontalmente en el centro */
+    margin: auto;
+}
+
+.bborder-icon {
+  /* Resto del código */
+  margin: 0 5px; /* Agrega un margen horizontal entre los iconos */
+}
+
+/*fin del codigo recuperar contraseña*/
+
+
+/*inicio del codigo para los icionos de iniciar sesion*/
+  /* Estilo del wrapper que se aplicará al formulario de iconos */
+    .wrapper {
+        width: 420px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(9px);
+        color: #fff;
+        border-radius: 12px;
+        padding: 30px 40px;
+        margin: 0 auto; /* Centra el formulario horizontalmente */
+        text-align: center;
+    }
+
+    .wrapper h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    /* Otros estilos del wrapper que quieras aplicar */
+
+
+.message button {
+  padding: 1rem;
+  font-weight: 400;
+  background-color: transparent;
+  border-radius: 2rem;
+  border: 2px solid white;
+  outline: none;
+  cursor: pointer;
+  font-size: .9rem;
+  margin-top: 2rem;
+  transition: all .3s ease-in;
+  color: #fff;
+}
+
+.message button:hover {
+  background-color: #6464f8;
+}
+
+
+
+.create-account {
+  padding: rem 0;
+  font-size: 1.7rem;
+}
+
+
+
+.border-icon {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  border: solid thin white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all .4s ease-in;
+  margin: 0 5px;
+  margin-bottom: 80px;
+}
+
+.border-icon:hover {
+  background-color: #2087ee;
+  cursor: pointer;
+}
+
+
+
+.sign-in.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sign-up.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* Estilo para los iconos */
+.iconos {
+  position: relative;
+  display: inline-block;
+}
+
+.texto-oculto {
+  position: absolute;
+  top: -100px; /* Ajusta la posición vertical según tus necesidades */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.border-icon:hover .texto-oculto {
+  opacity: 1;
+}
+
+.border-icon i {
+  font-size: 130px;
+}
+
+
+
+

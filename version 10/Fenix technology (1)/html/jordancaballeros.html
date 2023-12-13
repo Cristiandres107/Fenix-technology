@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jordan caballeros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/inventario.css">
+    <link rel="shortcut icon" href="/img/logo.png">
+    
+</head>
+<body>
+    <br>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <li class="nav-item custom-margin">
+        <a class="nav-link active btn btn-dark" aria-current="page" href="inventariojefeprincipal.html">Volver atras</a>
+    </li>
+     <!-- Código para la exportación de las zapatillas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+<li class="nav-item custom-margin">
+<button id="export-button" class="btn btn-dark">Exportar a excel</button>
+
+<script>
+  document.getElementById("export-button").addEventListener("click", function() {
+    // Crear un nuevo libro de Excel
+    const wb = XLSX.utils.book_new();
+    const wsName = "Products"; // Nombre de la hoja de cálculo
+
+    // Recopilar datos de productos
+    const products = [];
+    const productContainers = document.querySelectorAll(".card-body");
+
+    productContainers.forEach(productContainer => {
+      const imgURL = productContainer.querySelector("img").src;
+      const name = productContainer.querySelector(".card-title").textContent;
+      const price = productContainer.querySelector("p").textContent;
+
+      products.push([imgURL, name, price]);
+    });
+
+    // Crear la hoja de cálculo
+    const header = ["Image URL", "Name", "Price"];
+    const data = [header, ...products];
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    XLSX.utils.book_append_sheet(wb, ws, wsName);
+
+    // Exportar el libro de Excel a un archivo
+    XLSX.writeFile(wb, "products.xlsx");
+  });
+</script>
+<!--  fin para el Código de la exportación de las zapatillas -->
+
+<!--  codigo para imprimir y exportar pdf -->
+<button id="export-pdf-button" class="btn btn-dark">Exportar a PDF</button>
+
+<!-- Agrega el script para exportar a PDF -->
+<script>
+document.getElementById("export-pdf-button").addEventListener("click", function () {
+    // Ocultar el botón de exportación para que no aparezca en el PDF
+    document.getElementById("export-pdf-button").style.display = "none";
+    
+    // Imprimir la página actual a PDF
+    window.print();
+
+    // Volver a mostrar el botón de exportación después de imprimir
+    document.getElementById("export-pdf-button").style.display = "block";
+});
+</script>
+<!--  fin para el Código de la exportación a pdf -->
+
+
+<li class="nav-item custom-margin">
+  <!-- Código para la barra de busqueda -->
+  <form class="d-flex" id="productSearchForm">
+    <input class="form-control me-2" type="text" placeholder="Buscar zapatilla">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+  </form>
+
+  <script>
+    document.getElementById('productSearchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var searchTerm = document.querySelector('#productSearchForm input').value.toLowerCase();
+    
+        var productLinks = {
+            "air jordan 1 mid lakers": "/htmlcaballeros/jordan1caballeros.html",
+            "jordan wmns": "/htmlcaballeros/jordan2caballeros.html",
+            "air jordan retro 4 university": "/htmlcaballeros/jordan3caballeros.html",
+            "jbalvin x air jordan": "/htmlcaballeros/jordan4caballeros.html",
+            "casual jordan nike smoke": "/htmlcaballeros/jordan5caballeros.html",
+            "air jordan 5 retro": "/htmlcaballeros/jordan6caballeros.html"
+        };
+    
+        var productLink = productLinks[searchTerm];
+    
+        if (productLink) {
+            window.location.href = productLink;
+        } else {
+            alert('Zapatilla no encontrada');
+        }
+    });
+  </script>
+   <!-- fin de la barra de busqueda -->
+
+</ul>
+
+<br>
+ <!-- Botón para abrir el modal -->
+ <button id="showFormButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Agregar Nueva Zapatilla</button>
+
+ <!-- Modal de inserción de zapatillas -->
+ <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="addProductModalLabel">Agregar Nueva Zapatilla</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <form id="newProductForm">
+                     <div class="mb-3">
+                         <label for="productName" class="form-label">Nombre de la Zapatilla</label>
+                         <input type="text" class="form-control" id="productName" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="productPrice" class="form-label">Precio</label>
+                         <input type="number" class="form-control" id="productPrice" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="productImage" class="form-label">Imagen de la Zapatilla</label>
+                         <input type="file" class="form-control" id="productImage" accept="image/*" required>
+                     </div>
+                 </form>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                 <button type="button" class="btn btn-success" id="addProductButton">Agregar</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+<br>
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/Air Jordan 1 Mid (Lakers)/lado derecho.jpg" class="card-img-top" alt="...">
+          <h5 class="card-title">Air Jordan 1 Mid Lakers</h5>
+          <p>$500.000</p>
+          <p class="card-text"></p>
+          <a href="/htmlcaballeros/jordan1caballeros.html" class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  <br>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/AIR JORDAN 1 MID SE 'CREMA CHOCOLATE OSCURO'/lado izquierdo.jpg" class="card-img-top" alt="...">
+          <h5 class="card-title">jordan wmns </h5>
+          <p>$600.000</p>
+          <p class="card-text"></p>
+          <a href="/htmlcaballeros/jordan2caballeros.html"  class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/Jordan 4 Retro Lighting Yellow, amarillo relámpago/alfrente.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">air jordan retro 4 university</h5>
+          <p>$450.689</p>
+          <p class="card-text"></p>
+          <a href="/htmlcaballeros/jordan3caballeros.html"  class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/Jordan Air Jordan 1 Retro High OG DC3481 900 J Balvin para hombre/alfrente.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">jbalvin x air jordan</h5>
+          <p>$450.263</p>
+          <p class="card-text"></p>
+          <a href="/htmlcaballeros/jordan4caballeros.html"  class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/Nike JORDAN 1 Air jordan/de arriba.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">casual jordan nike smoke </h5>
+          <p>$300.250</p>
+          <p class="card-text"></p>
+          <a href="/htmlcaballeros/jordan5caballeros.html"  class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <img src="/img/caballeros/jordan/Nike Jordan 5 What The RedYellowMultiColor Grade School/lado izquierdo.jpeg" class="card-img-top" alt="...">
+          <h5 class="card-title">air jordan 5 retro</h5>
+          <p>$250.000</p>
+          <p class="card-text"></p> 
+          <a href="/htmlcaballeros/jordan6caballeros.html"  class="btn btn-primary">ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script src="/js/inventario.js" ></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.testimonial-slider {
+    background-color: #ffffff;
+    padding: 3em 2em;
+  }
+  .testimonial-title {
+    color: #000000;
+  }
+  .testimonial-title h2 {
+    padding-left: 0.2em;
+  }
+  
+  .card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+
+}
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #fff;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    top: 60%;
+    transform: translateY(-50%);
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  }
+  @media (min-width: 576px) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 50%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+  }
+  @media (min-width: 768px) {
+    .carousel-inner {
+      padding: 1em;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 3em;
+      height: 3em;
+      position: absolute;
+      left: 1em;
+      top: 90%;
+      opacity: 1;
+    }
+    .carousel-control-next {
+      left: 4.5em;
+    }
+  }
+
+  .imagen-pequena1 {
+    width: 500px;
+    height: 500px;
+}
+.imagen-pequena2 {
+    width: 500px;
+    height: 500px;
+}
+/* Agregar margen entre los botones */
+.custom-margin {
+    margin-left: 10px; /* Ajusta el valor según el espacio que desees entre los botones */
+    
+}
+.nav-pills {
+    --bs-nav-pills-border-radius: var(--bs-border-radius);
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #000000;
+}
