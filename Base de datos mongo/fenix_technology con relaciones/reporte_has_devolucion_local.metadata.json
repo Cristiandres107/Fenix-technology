@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"871aa90fc61b4a95814d15e4113f8edd","collectionName":"reporte_has_devolucion_local","type":"collection"}
