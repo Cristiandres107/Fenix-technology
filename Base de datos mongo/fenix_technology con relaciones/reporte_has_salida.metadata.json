@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"4ef6e019eb3b4cf1830cb9d31f65c4ec","collectionName":"reporte_has_salida","type":"collection"}
